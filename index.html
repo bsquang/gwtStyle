@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<meta name="viewport" content="initial-scale=1, user-scalable=no">
+			
+		<script src="phonegap.js"></script>
+		<link rel="stylesheet" type="text/css" href="css.css">
+		<script type="text/javascript" charset="utf-8" src="jquery.js"></script>
+		<script>
+			var bPHONEGAP = true;
+		</script>
+	</head>
+	<body>
+		
+	<div style='position: relative'>
+		<div class='wrap'>
+			<div class='overlay'></div>
+			<div class='panel' id='panelIntro'>
+		
+				<!--<img src='res/TITLE.png' style='position: absolute;left: 0;top: 50%;-webkit-transform: translateY(-50%);width: 100%;'>-->
+				
+				<p class='desc'>Hãy cùng khám phá phong cách của bạn qua sự lựa chọn ngẫu nhiên dựa trên sở thích của bạn</p>
+				
+			</div>
+			<div class='panel' id='panelSelectMusic'>
+				<div class='menu'>
+					<div class='menuTop'>
+						<div class='posterStyle show' state-id='0' style-id='0' style='background: url("res/gold/a21.png");background-size: cover;background-repeat: no-repeat;'></div>
+						<div class='posterStyle show' state-id='0' style-id='1' style='background: url("res/gold/aa.png");background-size: cover;background-repeat: no-repeat;'></div>
+						<div class='posterStyle show' state-id='0' style-id='2' style='background: url("res/gold/a22.png");background-size: cover;background-repeat: no-repeat;'></div>
+					</div>
+						
+					<div class='menuBottom'>
+						<div class='buttonStyle' style-id='0' style='left:-275px;'>ROCK</div>
+						<div class='buttonStyle' style-id='1' style='left:-5px;'>POP</div>
+						<div class='buttonStyle' style-id='2' style='left:270px;'>HIPHOP</div>
+					</div>
+				
+				</div>
+				<div class='buttonNext'></div>
+			</div>
+			
+			<div class="panel" id='panelSelectSport'>
+				<div class='menu'>
+					<div class='menuTop'>
+						<div class='posterStyle show' state-id='1' style-id='3' style='background: url("res/gold/b2.png");background-size: cover;background-repeat: no-repeat;'></div>
+						<div class='posterStyle show' state-id='1' style-id='4' style='background: url("res/gold/b3.png");background-size: cover;background-repeat: no-repeat;'></div>
+						<div class='posterStyle show' state-id='1' style-id='5' style='background: url("res/gold/b11.png");background-size: cover;background-repeat: no-repeat;'></div>
+					</div>
+						
+					<div class='menuBottom'>
+						<div class='buttonStyle' style-id='0' style='left:-285px;'>Bóng Rổ</div>
+						<div class='buttonStyle' style-id='1' style='left:-5px;'>Bơi Lội</div>
+						<div class='buttonStyle' style-id='2' style='left:270px;'>Đá bóng</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel" id='panelSelectWatch'>
+				<div class='menu'>
+					<div class='menuTop'>
+						<div class='posterStyle show' state-id='2' style-id='6' style='background: url("res/gold/b10.png");background-repeat: no-repeat;background-size: cover'></div>
+						<div class='posterStyle show' state-id='2' style-id='7' style='background: url("res/gold/b7.png");background-repeat: no-repeat;background-size: cover'></div>
+						<div class='posterStyle show' state-id='2' style-id='8' style='background: url("res/gold/b6.png");background-repeat: no-repeat;background-size: cover'></div>
+					</div>
+						
+					<div class='menuBottom'>
+						<div class='buttonStyle' style-id='0' style='left:-275px;'>Thể Thao</div>
+						<div class='buttonStyle' style-id='1' style='left:-5px;'>Cá Tính</div>
+						<div class='buttonStyle' style-id='2' style='left:270px;'>Sang Trọng</div>
+					</div>
+				</div>
+			</div>
+			
+			
+			<div class="panel" id='panelSelectHobby'>
+				<div class='menu'>
+					<div class='menuTop'>
+						<div class='posterStyle show' state-id='3' style-id='9' style='background: url("res/gold/in.png");background-repeat: no-repeat;background-size: cover'></div>
+						<div class='posterStyle show' state-id='3' style-id='10' style='background: url("res/gold/in-2.png");background-repeat: no-repeat;background-size: cover'></div>
+						<div class='posterStyle show' state-id='3' style-id='11' style='background: url("res/gold/in-3.png");background-repeat: no-repeat;background-size: cover'></div>
+					</div>
+						
+					<div class='menuBottom'>
+						<div class='buttonStyle' style-id='0' style='left:-275px;'>Lướt Web</div>
+						<div class='buttonStyle' style-id='1' style='left:-5px;'>Bar-Club</div>
+						<div class='buttonStyle' style-id='2' style='left:270px;'>Mua Sắm</div>
+					</div>
+				</div>
+			</div>
+				
+				
+			<div class="panel" id='panelSelectCar'>
+				<div class='menu'>
+					<div class='menuTop'>
+						<div class='posterStyle show' state-id='4' style-id='12' style='background: url("res/gold/a2.png");background-repeat: no-repeat;background-size: cover'></div>
+						<div class='posterStyle show' state-id='4' style-id='13' style='background: url("res/gold/a3.png");background-repeat: no-repeat;background-size: cover'></div>
+						<div class='posterStyle show' state-id='4' style-id='14' style='background: url("res/gold/a1.png");background-repeat: no-repeat;background-size: cover'></div>
+					</div>
+						
+					<div class='menuBottom'>
+						<div class='buttonStyle' style-id='0' style='left:-275px;'>Sang Trọng</div>
+						<div class='buttonStyle' style-id='1' style='left:-5px;'>Thể Thao</div>
+						<div class='buttonStyle' style-id='2' style='left:270px;'>Phong Cách</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="panel" id='panelSelectYourStyle'>
+				<div class='content'>
+					<img class='mImg' style="position: relative" bsq-id='0' src='res/gold/child-00.png'/>
+					<img class='mImg' style="position: relative" bsq-id='0' src='res/gold/child-01.png'/>
+					<img class='mImg' style="position: relative" bsq-id='0' src='res/gold/child-02.png'/>
+					<img class='mImg' style="position: relative" bsq-id='1' src='res/gold/child-10.png'/>
+					<img class='mImg' style="position: relative" bsq-id='1' src='res/gold/child-11.png'/>
+					<img class='mImg' style="position: relative" bsq-id='1' src='res/gold/child-12.png'/>
+					<img class='mImg' style="position: relative" bsq-id='2' src='res/gold/child-20.png'/>
+					<img class='mImg' style="position: relative" bsq-id='2' src='res/gold/child-21.png'/>
+					<img class='mImg' style="position: relative" bsq-id='2' src='res/gold/child-22.png'/>
+					<img class='mImg' style="position: relative" bsq-id='2' src='res/gold/child-23.png'/>				
+				</div>
+			</div>
+			
+			<div class="panel" id='panelYourStyle'>
+				<div class='contentGOD'>
+					<img id='imageGOD' src="res/gold/god/god-00.png"/>
+				</div>
+				<p class='styleTextGOD'>Sang trọng</p>
+			</div>
+			
+			
+			
+			<div class='buttonNext'></div>
+			<div class='buttonPrevious'></div>
+			
+			<div class='panel' id='panelConfirm'>
+				<div class='confirmSend'>
+					<img src='res/POPUP.png' />
+					<div ontouchstart='thankState()' class='confirmButton' style='left:55px;top:128px;'></div>
+					<div ontouchstart='sendState()' class='confirmButton' style='left:370px;top:128px;'></div>
+				</div>
+		    </div>
+			
+			<div class='panel' id='panelSend'>
+				<div class='formSend'>
+				<img src="res/FORM.png" style='position: absolute;left:260px;top: 160px;' />
+				<input type='text' value='' placeholder='Nguyen van a' id='userName' style='left: 330px;top: 196px;' />
+				<input type='text' value='' placeholder='test@gmail.com' id='userEmail' style='left: 330px;top: 314px;' />
+				<input type='text' value='' placeholder='0123456789' id='userTel' style='left: 330px;top: 434px;' />
+		
+				<div ontouchstart="sendAction()" style='position: absolute;left: 420px;top: 525px;width: 190px;height:100px;'></div>
+				</div>
+			</div>
+			
+			<div class='panel' id='panelThank'>
+				<h1>Cám ơn bạn đã tham gia</h1>
+			</div>
+			<div class='panel' id='panelConfig'>
+				<p class='buttonBSQ' ontouchstart='reload()' >Reload</p>
+				<p class='buttonBSQ' ontouchstart='sendAjaxDB()' id='buttonSendAjax' >Send</p>
+			</div>
+			<p id='time'>Time</p>
+			
+			<p class='buttonTest' id='buttonCONFIG' style='position: fixed;right: 0;top: 0;'></p>
+			<p class='buttonTest' id='buttonQUIT' style='position: fixed;right: 0;bottom: 0;'></p>
+	
+		</div>
+	</div>
+	    
+	
+	<script type="text/javascript" src="game.js"></script>
+	    
+	    
+	</body>
+</html>
