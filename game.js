@@ -92,9 +92,18 @@ function getRandomInt(min, max) {
 
 var arrVOICE = [];
 var strSnd = [];
-strSnd[21] = "res/SOUND/voice-1.mp3";
-strSnd[22] = "res/SOUND/voice-2.mp3";
-strSnd[23] = "res/SOUND/voice-3.mp3";
+strSnd[0] = "res/SOUND/voice-1.mp3";
+strSnd[1] = "res/SOUND/voice-2.mp3";
+strSnd[2] = "res/SOUND/voice-3.mp3";
+
+strSnd[3] = "res/SOUND/voice-4.mp3";
+strSnd[4] = "res/SOUND/voice-5.mp3";
+strSnd[5] = "res/SOUND/voice-6.mp3";
+
+strSnd[6] = "res/SOUND/voice-7.mp3";
+strSnd[7] = "res/SOUND/voice-8.mp3";
+
+
 
 var currentId = 0;
 
@@ -121,14 +130,29 @@ function onDeviceReady() {
 
     if (bPHONEGAP) {
 
-        arrVOICE[0] = new Media(strSnd[21], function() {}, function() {});
-        arrVOICE[1] = new Media(strSnd[22], function() {}, function() {});
-        arrVOICE[2] = new Media(strSnd[23], function() {}, function() {});
+        arrVOICE[0] = new Media(strSnd[0], function() {}, function() {});
+        arrVOICE[1] = new Media(strSnd[1], function() {}, function() {});
+        arrVOICE[2] = new Media(strSnd[2], function() {}, function() {});
+        
+        arrVOICE[3] = new Media(strSnd[3], function() {}, function() {});
+        arrVOICE[4] = new Media(strSnd[4], function() {}, function() {});
+        arrVOICE[5] = new Media(strSnd[5], function() {}, function() {});
+        
+        arrVOICE[6] = new Media(strSnd[6], function() {}, function() {});
+        arrVOICE[7] = new Media(strSnd[7], function() {}, function() {});
+        
     } else {
 
-        arrVOICE[0] = new Audio(strSnd[21]);
-        arrVOICE[1] = new Audio(strSnd[22]);
-        arrVOICE[2] = new Audio(strSnd[23]);
+        arrVOICE[0] = new Audio(strSnd[0]);
+        arrVOICE[1] = new Audio(strSnd[1]);
+        arrVOICE[2] = new Audio(strSnd[2]);
+        
+        arrVOICE[3] = new Audio(strSnd[3]);
+        arrVOICE[4] = new Audio(strSnd[4]);
+        arrVOICE[5] = new Audio(strSnd[5]);
+        
+        arrVOICE[6] = new Audio(strSnd[6]);
+        arrVOICE[7] = new Audio(strSnd[7]);
 
     }
 
@@ -233,8 +257,30 @@ function choice(stateID,tempID){
 
 function nextState(){
     
+    
 
     currentId += 1;
+    
+    arrVOICE[currentId-1].pause();
+    
+    if (currentId == 1) {
+        arrVOICE[1].play();
+    }
+    if (currentId == 2) {
+        arrVOICE[2].play();
+    }
+    if (currentId == 3) {
+        arrVOICE[3].play();
+    }
+    if (currentId == 4) {
+        arrVOICE[4].play();
+    }
+    if (currentId == 5) {
+        arrVOICE[5].play();
+    }
+    if (currentId == 6) {
+        arrVOICE[6].play();
+    }
     
     if (currentId > 0 && currentId < 6) {
         $('.buttonPrevious').fadeIn();
@@ -268,7 +314,7 @@ function nextState(){
             $(".styleTextGOD").html("Toàn cầu")
         }
         
-        var tempLink = "res/gold/god/god-"+classGOD+""+imgGOD+".png";
+        var tempLink = "res/gold/god/god-"+classGOD+""+imgGOD+"1.jpg";
         $("#imageGOD")[0].src = tempLink;
     }
     
@@ -298,7 +344,7 @@ function introState() {
 
 function sendState() {
     gotoScene("9");
-    arrVOICE[2].play();
+    arrVOICE[7].play();
 }
 
 function sendAction() {
