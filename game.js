@@ -281,6 +281,9 @@ function nextState(){
     if (currentId == 6) {
         arrVOICE[6].play();
     }
+    if (currentId == 8) {
+        arrVOICE[7].play();
+    }
     
     if (currentId > 0 && currentId < 6) {
         $('.buttonPrevious').fadeIn();
