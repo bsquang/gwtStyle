@@ -302,9 +302,12 @@ input{
 .desc{
     text-align: center;
     margin: auto;
-    margin-top: 560px;
+    margin-top: 620px;
+    margin-left: 150px;
     font-size: 30px;
     width: 720px;
+    position: absolute;
+    top: 0;
 }
 
 .styleTextGOD{

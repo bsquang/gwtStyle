@@ -325,7 +325,8 @@ function nextState(){
     }
     
     if (currentId == 7) {
-        $('.buttonNext').hide();        
+        $('.buttonNext').hide();
+        nextState();
     }     
         
 
@@ -387,7 +388,8 @@ function thankState() {
 }
 
 function confirmState(){
-    gotoScene("#panelConfirm");
+    //gotoScene("#panelConfirm");
+    nextState();
 }
 
 function gotoScene(id) {
