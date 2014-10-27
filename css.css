@@ -166,7 +166,7 @@ input{
     position: absolute;
     left: 20px;
     top: 316px;
-    width: 56px;
+    width: 55px;
     height: 123px;
     background: url('res/ICON_BACK.png');
     display: none;
@@ -293,10 +293,11 @@ input{
 .contentGOD{
     position: absolute;
     left: 110px;
-    top: 90px;
+    top: 60px;
 }
 .contentGOD img{
-    width:  800px;    
+    width:  800px;
+    display: none;
 }
 
 .desc{
@@ -316,25 +317,53 @@ input{
     font-size: 40px;
 }
 
+
+.menuCar{
+    position: absolute;
+    z-index: 99;
+    left: 170px;
+    top: 40px;
+}
+.bottomMenuCar{
+    
+}
+
+.bottomMenuCar img{
+    width:227px;   
+}
+
+.bsqFlash{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background: white;
+    
+    display: none;
+}
+
 @media only screen and (min-device-width : 320px) and (max-device-width : 568px)
 {
    
     .desc{
-        width: 400px;        
+        width: 400px;
+        margin-left: 90px;
         margin-top: 230px;
         font-size: 16px;
     }
     .styleTextGOD{
         margin-top: 260px;
         font-size: 20px;
+        padding-right: 40px;
+        text-align: right;
     }
     .contentGOD{        
-        left: 90px;
-        top: 30px;
+        left: 20px;
+        top: 10px;
     }
     .contentGOD img{
-        width:  400px;
-        height: 220px;
+        width:  400px;        
     }
     
     .content{
@@ -381,6 +410,19 @@ input{
     #panelThank h1{
         font-size: 20px;
         margin-top: 140px;
+    }
+    
+    .menuCar{
+        -webkit-transform: scale(0.45);
+        -webkit-transform-origin: top left;
+
+        left: 130px;
+        top: 20px;
+        width: 700px;
+    }
+    
+    #bottomCarTip{
+        display: none;
     }
     
     

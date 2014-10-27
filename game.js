@@ -29,7 +29,7 @@ function gameLoop() {
 }
 
 var countRandom = 0;
-var maxRandom = 10;
+var maxRandom = 20;
 
 var classGOD = 0;
 var imgGOD = 0;
@@ -40,15 +40,16 @@ function bsqRandom(){
         
         if(countRandom < maxRandom){
             
-            
-            picShuffle();
-            
+            picShuffle();            
             
             countRandom++;            
             
             if (countRandom >= maxRandom) {
-                                
+                
+                bsqFlash();                
                 nextState();
+                
+                $(".contentGOD img").fadeIn(2000)
                 
                 console.log("Stop random");
                 
@@ -60,8 +61,13 @@ function bsqRandom(){
         }
         
         
-    }, 300)
+    }, Math.round((Math.random() * (500))))
     
+}
+
+function bsqFlash() {
+    $(".bsqFlash").show();
+    $(".bsqFlash").fadeOut(1500);
 }
 
 function picShuffle(){
@@ -81,7 +87,7 @@ function picShuffle(){
         
         
         $(imgs[i]).css("position","absolute");
-        $(imgs[i]).animate({top:randTop,left:randLeft},300);
+        $(imgs[i]).animate({top:randTop,left:randLeft},Math.round((Math.random() * (500))));
     }
 }
 
@@ -176,6 +182,19 @@ function onDeviceReady() {
         
         $(".buttonNext").fadeIn();
     })
+    
+    $(".bottomMenuCar img").bind('touchstart', function() {
+        var tempID = $(this).attr('style-id');
+        var stateID = $(this).attr('state-id');
+        
+        //stateChoice[stateID][tempID] = 1;
+        
+        stateChoice[stateID] = 1;
+        
+        choiceCar(stateID,tempID);
+        
+        $(".buttonNext").fadeIn();
+    })
 
     
     
@@ -223,6 +242,47 @@ function onDeviceReady() {
     
     //gameLoop();
 
+}
+
+var oldIDCar = -1;
+function choiceCar(stateID, tempID) {
+    if (oldIDCar != tempID) {
+        
+        if (oldIDCar >= 0) {
+            $(".bottomMenuCar img[state-id="+stateID+"]").removeClass("bounce-zoom");
+            $(".bottomMenuCar img[state-id="+stateID+"]").addClass('show');
+        }
+        
+        var tempArr = $(".bottomMenuCar img[state-id="+stateID+"]");
+        for(var i=0;i<tempArr.length;i++){
+            var tempObj = tempArr[i];
+            if ($(tempObj).attr('style-id')==tempID) {
+                
+                $(tempObj).removeClass('show');
+                $(tempObj).addClass('bounce-zoom');
+                
+                var tempStyleID = $(tempObj).attr('style-id');
+                
+                if (tempStyleID == 12) {
+                    $('.topMenuCar img')[0].src = 'res/gold/car-00.jpg'
+                }
+                if (tempStyleID == 13) {
+                    $('.topMenuCar img')[0].src = 'res/gold/car-10.jpg'
+                }
+                if (tempStyleID == 14) {
+                    $('.topMenuCar img')[0].src = 'res/gold/car-20.jpg'
+                }
+                
+                
+            }
+        }
+        
+        //$(".posterStyle[state-id="+stateID+"]").removeClass('show');
+        //$(".posterStyle[state-id="+stateID+"]").addClass('bounce-zoom');
+        
+        
+        oldIDCar = tempID;
+    }
 }
 
 var oldID = -1;
@@ -321,17 +381,14 @@ function nextState(){
         $("#imageGOD")[0].src = tempLink;
     }
     
-    gotoScene(currentId+1);
+    
+    
+    if(currentId < 7) gotoScene(currentId+1);
+    else thankState();
     
     if (stateChoice[currentId] == 0) {
         $(".buttonNext").hide();
-    }
-    
-    if (currentId == 7) {
-        $('.buttonNext').hide();
-        nextState();
-    }     
-        
+    }   
 
     console.log("next "+currentId);
 }
@@ -378,8 +435,8 @@ function sendAction() {
 
 function thankState() {
 
-    document.activeElement.blur();
-    
+    //document.activeElement.blur();
+    $(".buttonNext").hide();
     gotoScene("10");
     setTimeout(function() {
 
