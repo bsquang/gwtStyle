@@ -248,10 +248,10 @@ var oldIDCar = -1;
 function choiceCar(stateID, tempID) {
     if (oldIDCar != tempID) {
         
-        if (oldIDCar >= 0) {
+        //if (oldIDCar >= 0) {
             $(".bottomMenuCar img[state-id="+stateID+"]").removeClass("bounce-zoom");
             $(".bottomMenuCar img[state-id="+stateID+"]").addClass('show');
-        }
+        //}
         
         var tempArr = $(".bottomMenuCar img[state-id="+stateID+"]");
         for(var i=0;i<tempArr.length;i++){
@@ -289,10 +289,10 @@ var oldID = -1;
 function choice(stateID,tempID){
     if (oldID != tempID) {
         
-        if (oldID >= 0) {
+        //if (oldID >= 0) {
             $(".posterStyle[state-id="+stateID+"]").removeClass("bounce-zoom");
             $(".posterStyle[state-id="+stateID+"]").addClass('show');
-        }
+        //}
         
         var tempArr = $(".posterStyle[state-id="+stateID+"]");
         for(var i=0;i<tempArr.length;i++){
